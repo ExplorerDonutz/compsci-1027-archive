@@ -1,0 +1,34 @@
+Answers for Lab 1
+------------------
+EXERCISE 2
+1. What do you think is the information that System.out.println(p1) prints on the screen?
+
+The object's class and the memory location it is stored in
+
+EXERCISE 3
+2. How many lines of text are printed?
+
+3
+
+EXERCISE 4
+3. How many error messages are printed by the compiler when javac is invoked for the first time?
+
+2
+
+4. After deleting the extra character in line 16, what is the error that the compiler finds?
+
+Exercise4.java:22: error: incompatible types: String cannot be converted to int
+                                bit = "0";
+                                      ^
+1 error
+error: compilation failed
+
+5. How many bits are printed by the program?
+
+8
+
+EXERCISE 5
+
+4. Which class is displayed on the browser?
+
+All classes in the lab1 project (I use intellij, so it might be different)
