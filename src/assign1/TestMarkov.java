@@ -1,5 +1,7 @@
 package assign1;
 
+import java.util.Arrays;
+
 public class TestMarkov {
 
 	public static void main(String[] args) {
@@ -60,6 +62,7 @@ public class TestMarkov {
 			if (markov.isValid() && equalArrays(m1.getData(), r1) && equalArrays(m2.getData(), r2) && equalArrays(m3.getData(), r3)) {
 				System.out.println("Test 3 Passed");
 			} else {
+				System.out.println(Arrays.deepToString(m3.getData()));
 				System.out.println("Test 3 Failed");
 			}
 		} catch (Exception e) {

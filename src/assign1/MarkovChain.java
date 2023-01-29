@@ -10,23 +10,50 @@ public class MarkovChain {
     }
 
     public boolean isValid() {
-        int sum = 0;
+        // Check all requirements of a markov chain
+        boolean sqr = transitionMatrix.getNumRows() == transitionMatrix.getNumCols();
+        boolean colsEqual = transitionMatrix.getNumCols() == stateVector.getNumCols();
+        boolean isSumOne = false;
+        double sum = 0;
+
+        // Get the sum of each element in the state vector
         for (int i = 0; i < stateVector.getNumCols(); i++) {
             sum += stateVector.getElement(i);
         }
 
-        // Return true if the instance variables are valid for a Markov chain
-        return transitionMatrix.getNumCols() == transitionMatrix.getNumRows() && transitionMatrix.getNumCols() == stateVector.getNumCols() && 0.99 < sum && sum < 1.01;
+        // Check if sum is equal to one (+/- 0.1 for rounding)
+        if (0.99 < sum && sum < 1.01) isSumOne = true;
+
+        sum = 0;
+
+        // Get the sum of each row in the transition matrix and check if it is equal to one
+        for (int i = 0; i < transitionMatrix.getNumRows(); i++) {
+            for (int j = 0; j < transitionMatrix.getNumCols(); j++) {
+                sum += transitionMatrix.getElement(i, j);
+            }
+            if (0.99 > sum || sum > 1.01) {
+                isSumOne = false;
+                // At least one row's sum is not equal to one (+/- 0.1), so for loop can break
+                break;
+            }
+
+            sum = 0;
+        }
+
+        // Return the result of all the booleans
+        return sqr && colsEqual && isSumOne;
     }
 
     public Matrix computeProbabilityMatrix(int numSteps) {
         Matrix temp = transitionMatrix;
         if (!isValid())
             return null;
-        for (int i = 0; i < numSteps; i++) {
-            temp = temp.multiply(temp);
+
+        // Multiply the matrix by itself for numSteps - 1 times
+        for (int i = 0; i < numSteps - 1; i++) {
+            temp = temp.multiply(transitionMatrix);
         }
 
-        return temp;
+        return stateVector.multiply(temp);
     }
 }

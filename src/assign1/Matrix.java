@@ -1,5 +1,4 @@
 package assign1;
-
 public class Matrix {
     private int numRows;
     private int numCols;
@@ -49,14 +48,16 @@ public class Matrix {
     }
 
     public void transpose() {
-
+        // Use variable to temporarily store the old number of columns
         int oldCols = numCols;
         numCols = numRows;
         numRows = oldCols;
         double[][] temp = new double[numRows][numCols];
 
+        // Copy the old array onto the new array
         for (int i = 0; i < numRows; i++) {
             for (int j = 0; j < numCols; j++) {
+                // The rows of the new array are the columns of the old, and the columns are the rows
                 temp[i][j] = data[j][i];
             }
         }
