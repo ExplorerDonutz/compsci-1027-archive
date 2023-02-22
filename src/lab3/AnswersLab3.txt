@@ -1,0 +1,59 @@
+Answers for Lab 3
+-----------------------------------------------
+
+EXERCISE 1
+
+1. Should instance variable interestRate be declared as static? Explain.
+
+No, making instance variables static would mean that all objects share the same variables.
+
+2. Write the output from the test for class SavingsAccount.
+
+SavingsAccount: balance $115.00, interest rate 0.15%
+
+EXERCISE 2
+
+3. Which method(s) of the class CheckingAccount demonstrate overriding? Which methods demonstrate overloading?
+
+Withdraw, deposit, and to string are demonstrating overriding. The constructors demonstrate overloading
+
+4. Is bacc0 = chacc1 legal? Why?
+
+Yes because a parent class can reference a child class due to polymorphism
+
+5. Is chacc1 = bacc1 legal? Why?
+
+No because there is not enough memory assigned for a child class to reference its parent class.
+
+6. On which variables bacc1, chacc1, sacc1 was the invocation to method
+deductFees() valid? Explain.
+
+Only chacc1 is able to invoke the method deductFees(). Neither of the other two objects have access to that method.
+
+
+
+7. Which compilation error(s) could be fixed through casting? Which one(s)
+could not be fixed? Why?
+
+This is because sacc1 is a sibling class to chacc1, which means
+aside from having the same parent, the classes have nothing to do with one another. It also will not work with bacc1 because
+it does not have the method inside of its own class.
+
+8. Does the program run after commenting out the line causing the compilation
+error? If the program crashed, why did it crash?
+
+The program crashed because bacc1 cannot be cast with chacc1. Down-casting is not possible because bacc1 did not make a reference to the child class.
+
+
+
+EXERCISE 3
+
+9. Why does the compiler issue an error message when invoking newAcc.getTransactionCount()? Why does the compiler issue an error message when invoking newAcc.getInterestRate()?
+
+The compiler issues an error message because the BankAccount class does not have access to the methods.
+
+10. Can you tell whether in the statement String accountInfo = newAcc.toString(); the
+method toString() being invoked is from the class CheckingAccount or from the class
+SavingsAccount? Explain your answer.
+
+No because the code would have to run and let the user decide what type it is before we would know.
