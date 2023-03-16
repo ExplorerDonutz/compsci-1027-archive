@@ -1,0 +1,33 @@
+Answers for Lab 8
+-----------------------------------------------
+
+EXERCISE 1
+
+1. What is the type of Exception being thrown? Why is this occurring?
+There is a class cast exception being thrown because class Card cannot be cast to Comparable
+
+
+2. After adding the "implements Comparable<Card>" into the class definition, why is there now a compiler-error?
+We need to implement the methods from comparable
+
+
+EXERCISE 2
+
+3. After multiplying the return value by -1 in compareByName(), how are the names being sorted? Why is this happening?
+They are being sorted in reverse order because the negatives and positives have been swapped (greatest is now least)
+
+
+EXERCISE 3
+
+4. Why is the list of cities being shown in this order initially?
+They are ordered in population from lowest to highest
+
+
+5.
+a) Initially, does the order in which the cities are added to the list affect the order in which they are stored in the list?
+No because it is comparing their populations as they are added
+
+
+b) After completing compareTo(), does the order in which the cities are added to the list affect the order in which they are stored in the list?
+No because they are sorted and moved around according to their comparison
+
