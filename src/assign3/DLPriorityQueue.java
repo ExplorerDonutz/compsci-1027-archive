@@ -61,21 +61,56 @@ public class DLPriorityQueue<T> implements PriorityQueueADT<T> {
      */
     @Override
     public T removeMin() throws EmptyPriorityQueueException {
-        T minData = front.getDataItem();
+        if (front != null) {
+            T minData = front.getDataItem();
 
-        // Replace front with the next item in queue
-        front = front.getNext();
+            // Replace front with the next item in queue
+            front = front.getNext();
 
-        // If front is now null, then the queue is now empty
-        if (front == null)
-            rear = null;
+            // If front is now null, then the queue is now empty
+            if (front == null)
+                rear = null;
 
-        return minData;
+            return minData;
+        } else {
+            throw new EmptyPriorityQueueException("Empty queue");
+        }
     }
 
     @Override
     public void updatePriority(T data, double newPriority) throws InvalidElementException {
+        DLinkedNode<T> node = null;
+            DLinkedNode<T> start = front;
+            for (int i = 0; i < this.size(); i++) {
+                if (start.getDataItem() == data) {
+                    node = front;
+                    break;
+                }
+                start = start.getNext();
+            }
 
+            if (node != null) {
+                // Remove this node by connecting the previous node with the next node or null in the case that one of those is null
+                if (node.getPrev() != null) {
+                    if (node.getNext() != null) {
+                        node.getPrev().setNext(node.getNext());
+                        node.getNext().setPrev(node.getPrev());
+                    } else {
+                        node.getPrev().setNext(null);
+                    }
+                } else if (node.getNext() != null) {
+                    node.getNext().setPrev(null);
+                } else {
+                    // The node with this data is the only node
+                    this.removeMin();
+                }
+
+                // Put the data back into the queue with its new priority
+                this.add(data, newPriority);
+            } else {
+                // The data wasn't found in the queue
+                throw new InvalidElementException("Data not found in queue");
+            }
     }
 
     @Override
@@ -85,18 +120,19 @@ public class DLPriorityQueue<T> implements PriorityQueueADT<T> {
 
     @Override
     public int size() {
+        int size = 0;
         if (front != null) {
+            size++;
+
             // Loop through the queue until the last item is found
-            int size = 1;
             DLinkedNode<T> start = front.getNext();
             while (start != null) {
                 size++;
                 start = start.getNext();
             }
-            return size;
         }
         // Queue is empty
-        return 0;
+        return size;
     }
 
     public String toString() {

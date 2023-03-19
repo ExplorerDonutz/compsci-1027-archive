@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18a6a10c-9c90-4e71-8439-941228aae2f7" name="Changes" comment="Completed lab 8, working on assignment 3">
+    <list default="true" id="18a6a10c-9c90-4e71-8439-941228aae2f7" name="Changes" comment="Completed some DLPriorityQueue methods for assignment 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign3/DLPriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign3/DLPriorityQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign3/DLinkedNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign3/DLinkedNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign3/FindShortestPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign3/FindShortestPath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign3/HexComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign3/HexComponent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,20 +51,7 @@
       <recent name="$PROJECT_DIR$/src/lab7" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GraphicSystem">
-    <configuration name="City" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab8.City" />
-      <module name="cs1027-archive" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lab8.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.TestPriorityQueue">
     <configuration name="ClassB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lab2.ClassB" />
       <module name="cs1027-archive" />
@@ -90,12 +78,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Exercise4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab1.Exercise4" />
+    <configuration name="FindShortestPath" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="assign3.FindShortestPath" />
       <module name="cs1027-archive" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;src/assign3/dungeon1.txt&quot;" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lab1.*" />
+          <option name="PATTERN" value="assign3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,13 +105,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestPriorityQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="assign3.TestPriorityQueue" />
+      <module name="cs1027-archive" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assign3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestPriorityQueue" />
+        <item itemvalue="Application.FindShortestPath" />
         <item itemvalue="Application.GraphicSystem" />
         <item itemvalue="Application.ClassB" />
         <item itemvalue="Application.CountObjects" />
-        <item itemvalue="Application.Exercise4" />
-        <item itemvalue="Application.City" />
       </list>
     </recent_temporary>
   </component>
@@ -149,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677034332148</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Completed some DLPriorityQueue methods for assignment 3">
+      <created>1679166064153</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679166064153</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +178,7 @@
     <MESSAGE value="Finished lab 4" />
     <MESSAGE value="Completed lab 3, lab 4, and assignment 2" />
     <MESSAGE value="Completed lab 8, working on assignment 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed lab 8, working on assignment 3" />
+    <MESSAGE value="Completed some DLPriorityQueue methods for assignment 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed some DLPriorityQueue methods for assignment 3" />
   </component>
 </project>

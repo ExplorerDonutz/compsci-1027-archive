@@ -126,7 +126,7 @@ public class HexComponent extends JComponent {
 		if (c == HexColors.WALL) {
 			try {
 				BufferedImage texture;
-				texture = ImageIO.read(new File("wall.jpg"));
+				texture = ImageIO.read(new File("src/assign3/wall.jpg"));
 				TexturePaint tp = new TexturePaint(texture, new Rectangle(0, 0, 50, 50));
 				g2d.setPaint(tp);
 				g2d.fillPolygon(hexagon);
