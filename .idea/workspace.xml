@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="18a6a10c-9c90-4e71-8439-941228aae2f7" name="Changes" comment="Completed some DLPriorityQueue methods for assignment 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign3/DLPriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign3/DLPriorityQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign3/FindShortestPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign3/FindShortestPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign3/HexComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign3/HexComponent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +37,9 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$USER_HOME$/CCC Practice" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
