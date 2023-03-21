@@ -200,8 +200,9 @@ public class TestPriorityQueue {
 			while (current != null) {
 				if (current.getPriority() != answer7[i])
 					testPassed = false;
-				if (i == 4 && current.getNext() != null)
+				if (i == 4 && current.getNext() != null) {
 					testPassed = false;
+				}
 				else if (i == 0 && current.getPrev() != null)
 					testPassed = false;
 				if (current.getNext() != null && current.getNext().getPriority() != answer7[i + 1])

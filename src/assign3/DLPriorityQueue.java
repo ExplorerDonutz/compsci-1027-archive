@@ -5,7 +5,7 @@ package assign3;
  *
  * @param <T> The data type stored in the nodes
  * @author Michael Quick
- * @version 1.0, 2023/03/18
+ * @version 1.0, 2023/03/21
  */
 public class DLPriorityQueue<T> implements PriorityQueueADT<T> {
     private DLinkedNode<T> front;
@@ -16,7 +16,7 @@ public class DLPriorityQueue<T> implements PriorityQueueADT<T> {
      * Creates an empty priority queue
      */
     public DLPriorityQueue() {
-
+        count = 0;
     }
 
     /**
@@ -27,32 +27,41 @@ public class DLPriorityQueue<T> implements PriorityQueueADT<T> {
      */
     @Override
     public void add(T data, double priority) {
-        DLinkedNode<T> newNode = new DLinkedNode<>(data, priority);
-        if (front == null) {
-            front = newNode;
-            rear = newNode;
-        } else if (priority <= front.getPriority()) {
-            // The new node has a lower priority than front, so it should go in the front of the queue
+        DLinkedNode<T> newNode = new DLinkedNode<T>(data, priority);
+
+        // This is the only node
+        if (isEmpty()) {
+            front = rear = newNode;
+        } else if (newNode.getPriority() <= front.getPriority()) {
+            // The data's priority is lower than front, so make it the new front
             newNode.setNext(front);
             front.setPrev(newNode);
             front = newNode;
-        } else if (priority > rear.getPriority()) {
-            // The new node has a higher priority than rear, so it should go in the rear
-            rear.setNext(newNode);
-            newNode.setPrev(rear.getNext());
-            rear = newNode;
         } else {
-            // The priority lies somewhere within the middle of the queue
-            DLinkedNode<T> start = front.getNext();
-            while (start.getPriority() > priority) {
-                start = start.getNext();
+            // The data's priority is greater than front's priority
+            DLinkedNode<T> curr = front;
+
+            // Find where data belongs based on priority
+            while (curr.getNext() != null && newNode.getPriority() > curr.getNext().getPriority()) {
+                curr = curr.getNext();
             }
 
-            start.getPrev().setNext(newNode);
-            newNode.setNext(start.getPrev());
-            newNode.setPrev(start.getPrev().getNext());
-            start.setPrev(newNode.getNext());
+            // Data should be the new rear as it has the greatest priority
+            if (curr.getNext() == null) {
+                curr.setNext(newNode);
+                newNode.setPrev(curr);
+                rear = newNode;
+            } else {
+                // Data is somewhere in the middle
+                newNode.setNext(curr.getNext());
+                newNode.setPrev(curr);
+                curr.getNext().setPrev(newNode);
+                curr.setNext(newNode);
+            }
         }
+
+        // Update count
+        count++;
     }
 
     /**
@@ -61,82 +70,91 @@ public class DLPriorityQueue<T> implements PriorityQueueADT<T> {
      */
     @Override
     public T removeMin() throws EmptyPriorityQueueException {
-        if (front != null) {
-            T minData = front.getDataItem();
-
-            // Replace front with the next item in queue
-            front = front.getNext();
-
-            // If front is now null, then the queue is now empty
-            if (front == null)
-                rear = null;
-
-            return minData;
-        } else {
+        if (isEmpty()) {
+            // There is nothing to remove because the queue is empty
             throw new EmptyPriorityQueueException("Empty queue");
+        } else {
+            // Get the data item from the front of the queue
+            T dataItem = front.getDataItem();
+
+            // Remove the item from the queue
+            front = front.getNext();
+            if (front == null) {
+                // Queue is now empty
+                rear = null;
+            } else {
+                front.setPrev(null);
+            }
+            count--;
+            return dataItem;
         }
     }
 
+    /**
+     * Reorders the queue based on the given data item and its new priority
+     *
+     * @param data        item whose priority is to be changed
+     * @param newPriority value of the new priority for this data item
+     * @throws InvalidElementException if the data item does not exist within the queue
+     */
     @Override
     public void updatePriority(T data, double newPriority) throws InvalidElementException {
-        DLinkedNode<T> node = null;
-            DLinkedNode<T> start = front;
-            for (int i = 0; i < this.size(); i++) {
-                if (start.getDataItem() == data) {
-                    node = front;
-                    break;
-                }
-                start = start.getNext();
-            }
+        // Find the node that holds the data item
+        DLinkedNode<T> curr = front;
 
-            if (node != null) {
-                // Remove this node by connecting the previous node with the next node or null in the case that one of those is null
-                if (node.getPrev() != null) {
-                    if (node.getNext() != null) {
-                        node.getPrev().setNext(node.getNext());
-                        node.getNext().setPrev(node.getPrev());
-                    } else {
-                        node.getPrev().setNext(null);
-                    }
-                } else if (node.getNext() != null) {
-                    node.getNext().setPrev(null);
-                } else {
-                    // The node with this data is the only node
-                    this.removeMin();
-                }
+        while (curr != null && !curr.getDataItem().equals(data)) {
+            curr = curr.getNext();
+        }
 
-                // Put the data back into the queue with its new priority
-                this.add(data, newPriority);
+        if (curr == null || !curr.getDataItem().equals(data)) {
+            throw new InvalidElementException("Data item does not exist in priority queue: " + data.toString());
+        } else {
+            // Update the priority of the current node
+            curr.setPriority(newPriority);
+
+            // Remove the current node and re-add it to maintain order
+            DLinkedNode<T> prev = curr.getPrev();
+            DLinkedNode<T> next = curr.getNext();
+            if (prev != null) {
+                prev.setNext(next);
             } else {
-                // The data wasn't found in the queue
-                throw new InvalidElementException("Data not found in queue");
+                front = next;
             }
+            if (next != null) {
+                next.setPrev(prev);
+            } else {
+                rear = prev;
+            }
+            add(data, newPriority);
+        }
     }
 
     @Override
     public boolean isEmpty() {
-        return front == null && rear == null;
+        // Returns true if count is 0
+        return count == 0;
     }
 
     @Override
     public int size() {
-        int size = 0;
-        if (front != null) {
-            size++;
-
-            // Loop through the queue until the last item is found
-            DLinkedNode<T> start = front.getNext();
-            while (start != null) {
-                size++;
-                start = start.getNext();
-            }
-        }
-        // Queue is empty
-        return size;
+        return count;
     }
 
+    /**
+     * Concatenates the data items in the priority queue together
+     *
+     * @return a string representation of the priority queue
+     */
     public String toString() {
-        return "";
+        String s = "";
+        DLinkedNode<T> curr = front;
+
+        // Concatenate each data item's toString return value
+        for (int i = 0; i < count; i++) {
+            s = s.concat(curr.getDataItem().toString());
+            curr = curr.getNext();
+        }
+        return s;
     }
 
     public DLinkedNode<T> getRear() {
