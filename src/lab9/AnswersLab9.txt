@@ -1,0 +1,91 @@
+Answers for Lab 9
+-----------------------------------------------
+
+EXERCISE 1
+
+1. Why do the iterative methods require so many variables? What are the base cases of the recursive methods?
+
+Iterative goes through each value, replacing one with another as it goes. The best cases for recursive are if n = 1 or n = 2
+
+2. Write down the running time printed out to the console for each of the following inputs:
+
+Factorial(5):
+
+Iterative Factorial: the value of 5! (Factorial) is 120
+Elapsed time: 10ms; number of calls to the algorithm: 1
+Recursive Factorial: the value of 5! (Factorial) is 120
+Elapsed time: 0ms; number of calls to the algorithm: 5
+
+Factorial(10):
+
+Iterative Factorial: the value of 10! (Factorial) is 3628800
+Elapsed time: 0ms; number of calls to the algorithm: 1
+Recursive Factorial: the value of 10! (Factorial) is 3628800
+Elapsed time: 0ms; number of calls to the algorithm: 10
+
+Factorial(20):
+
+Iterative Factorial: the value of 20! (Factorial) is 2432902008176640000
+Elapsed time: 0ms; number of calls to the algorithm: 1
+Recursive Factorial: the value of 20! (Factorial) is 2432902008176640000
+Elapsed time: 0ms; number of calls to the algorithm: 20
+
+Factorial(40):
+
+Iterative Factorial: the value of 40! (Factorial) is -70609262346240000
+Elapsed time: 0ms; number of calls to the algorithm: 1
+Recursive Factorial: the value of 40! (Factorial) is -70609262346240000
+Elapsed time: 0ms; number of calls to the algorithm: 40
+
+Fibonacci(5):
+
+Iterative Fibonacci: the 5-th Fibonacci number is 5
+Elapsed time: 11ms; number of calls to the algorithm: 1
+Recursive Fibonacci: the 5-th Fibonacci number is 5
+Elapsed time: 0ms; number of calls to the algorithm: 9
+
+Fibonacci(10):
+
+Iterative Fibonacci: the 10-th Fibonacci number is 55
+Elapsed time: 0ms; number of calls to the algorithm: 1
+Recursive Fibonacci: the 10-th Fibonacci number is 55
+Elapsed time: 0ms; number of calls to the algorithm: 109
+
+Fibonacci(20):
+
+Iterative Fibonacci: the 20-th Fibonacci number is 6765
+Elapsed time: 0ms; number of calls to the algorithm: 1
+Recursive Fibonacci: the 20-th Fibonacci number is 6765
+Elapsed time: 0ms; number of calls to the algorithm: 13529
+
+Fibonacci(40):
+
+Iterative Fibonacci: the 40-th Fibonacci number is 102334155
+Elapsed time: 0ms; number of calls to the algorithm: 1
+Recursive Fibonacci: the 40-th Fibonacci number is 102334155
+Elapsed time: 238ms; number of calls to the algorithm: 204668309
+
+3. What is the value of methodCalls2 (calls to rfib(2)) when n=40?
+
+63245986
+
+4. Why is the recursive algorithm for computing Fibonacci numbers so slow compared to the iterative algorithm? Does the value of methodCalls2 make sense with this rationale?
+
+It is because it is being called many times, and thus causes the program to run slowly. This holds true based on how large the value of methodCalls2 gets.
+
+
+
+EXERCISE 3
+
+5. How many activation records are there in the execution stack?
+5
+
+
+6. Write the values of 
+param1 = '1' 49
+local1 = 1
+i = 1
+
+7. How did the execution stack change after you pressed F6 twice?
+
+There is only 4 activation records left in the stack (m1 is gone)

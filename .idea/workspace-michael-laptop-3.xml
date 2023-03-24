@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18a6a10c-9c90-4e71-8439-941228aae2f7" name="Changes" comment="Completed lab 3, lab 4, and assignment 2">
-      <change afterPath="$PROJECT_DIR$/src/assign4/NLNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab9/Abo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="18a6a10c-9c90-4e71-8439-941228aae2f7" name="Changes" comment="Completed lab 8, working on assignment 3">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +37,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;/home/michael/roguetrails&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/michael/OneDrive_Michael Quick UWO/Comp Sci 1027A/cs1027-archive"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/lab8" />
@@ -51,17 +51,19 @@
       <recent name="$PROJECT_DIR$/src/lab03" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/lab8" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/lab7" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestFileStructure">
-    <configuration name="Abo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab9.Abo" />
+  <component name="RunManager" selected="Application.GraphicSystem">
+    <configuration name="City" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab8.City" />
       <module name="cs1027-archive" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lab9.*" />
+          <option name="PATTERN" value="lab8.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -69,12 +71,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExecutionStackExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab9.ExecutionStackExample" />
+    <configuration name="ClassB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab2.ClassB" />
       <module name="cs1027-archive" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lab9.*" />
+          <option name="PATTERN" value="lab2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -82,12 +84,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FactorialDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab9.FactorialDemo" />
+    <configuration name="CountObjects" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab2.CountObjects" />
       <module name="cs1027-archive" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lab9.*" />
+          <option name="PATTERN" value="lab2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -95,12 +97,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FibonacciDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab9.FibonacciDemo" />
+    <configuration name="Exercise4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab1.Exercise4" />
       <module name="cs1027-archive" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lab9.*" />
+          <option name="PATTERN" value="lab1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,12 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestFileStructure" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="assign4.TestFileStructure" />
+    <configuration name="GraphicSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab7.GraphicSystem" />
       <module name="cs1027-archive" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="assign4.*" />
+          <option name="PATTERN" value="lab7.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -121,20 +123,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.TestFileStructure" />
-      <item itemvalue="Application.Abo" />
-      <item itemvalue="Application.ExecutionStackExample" />
-      <item itemvalue="Application.FactorialDemo" />
-      <item itemvalue="Application.FibonacciDemo" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestFileStructure" />
-        <item itemvalue="Application.ExecutionStackExample" />
-        <item itemvalue="Application.Abo" />
-        <item itemvalue="Application.FibonacciDemo" />
-        <item itemvalue="Application.FactorialDemo" />
+        <item itemvalue="Application.GraphicSystem" />
+        <item itemvalue="Application.ClassB" />
+        <item itemvalue="Application.CountObjects" />
+        <item itemvalue="Application.Exercise4" />
+        <item itemvalue="Application.City" />
       </list>
     </recent_temporary>
   </component>
@@ -161,14 +156,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677034332148</updated>
     </task>
-    <task id="LOCAL-00003" summary="Completed some DLPriorityQueue methods for assignment 3">
-      <created>1679166064153</created>
+    <task id="LOCAL-00003" summary="Completed lab 8, working on assignment 3">
+      <created>1678992059845</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1679166064153</updated>
+      <updated>1678992059845</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Completed lab 8, working on assignment 3">
+      <created>1678992117489</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678992117489</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,8 +189,6 @@
     <MESSAGE value="Finished lab 4" />
     <MESSAGE value="Completed lab 3, lab 4, and assignment 2" />
     <MESSAGE value="Completed lab 8, working on assignment 3" />
-    <MESSAGE value="Completed some DLPriorityQueue methods for assignment 3" />
-    <MESSAGE value="Working on FindShortestPath for assign 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on FindShortestPath for assign 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed lab 8, working on assignment 3" />
   </component>
 </project>
