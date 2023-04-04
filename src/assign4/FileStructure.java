@@ -41,38 +41,57 @@ public class FileStructure {
         return root;
     }
 
+    /**
+     * Searches for a file type within the file structure.
+     * Best case: The root was the only file in the structure
+     * Recursive case: Using inorder, search the tree for any files of specified type
+     *
+     * @param type the file type to search for
+     * @return an iterator of string file names
+     */
     public Iterator<String> filesOfType(String type) {
         ArrayList<String> filesOfType = new ArrayList<>();
 
-        FileObject fileObject = root.getData();
-
-        // Best case: root is a file of specified type
-        if (fileObject.getLongName().endsWith(type)) {
-            filesOfType.add(root.getData().getLongName());
-            return filesOfType.iterator();
-        }
-
-        // Recursive case: search through the tree finding all files of specified type
-        Iterator<NLNode<FileObject>> iterator = root.getChildren();
-        while (iterator.hasNext()) {
-            NLNode<FileObject> child = iterator.next();
-            inorder(child, filesOfType, type);
-        }
+        inorder(root, filesOfType, type);
 
         return filesOfType.iterator();
     }
 
+    // Inorder for file type search
     private void inorder(NLNode<FileObject> node, ArrayList<String> filesOfType, String type) {
+        // If the node is a file of the specified type, add it to the arraylist
         if (node.getData().isFile() && node.getData().getLongName().endsWith(type)) {
             filesOfType.add(node.getData().getLongName());
-        } else {
-
+        } else if (node.getData().isDirectory()) {
+            // Recursively search through the rest of the children in the tree
+            Iterator<NLNode<FileObject>> iterator = node.getChildren();
+            while (iterator.hasNext()) {
+                NLNode<FileObject> child = iterator.next();
+                inorder(child, filesOfType, type);
+            }
         }
     }
 
-    public String findFile(String name) {
+    // Inorder for file search
+    private String inorder(NLNode<FileObject> node, String file) {
+        // If the node is a file of the specified type, add it to the arraylist
+        if (node.getData().isFile() && node.getData().getName().equals(file)) {
+            System.out.println(node.getData().getLongName());
+            return node.getData().getLongName();
+        } else if (node.getData().isDirectory()) {
+            // Recursively search through the rest of the children in the tree
+            Iterator<NLNode<FileObject>> iterator = node.getChildren();
+            while (iterator.hasNext()) {
+                NLNode<FileObject> child = iterator.next();
+                inorder(child, file);
+            }
+        }
+        return "";
+    }
 
-        return null;
+
+    public String findFile(String name) {
+        return inorder(root, name);
     }
 
 

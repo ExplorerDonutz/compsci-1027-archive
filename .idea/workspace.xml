@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18a6a10c-9c90-4e71-8439-941228aae2f7" name="Changes" comment="Completed lab 3, lab 4, and assignment 2">
-      <change afterPath="$PROJECT_DIR$/src/assign4/NLNode.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/lab9/Abo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign4/FileStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign4/FileStructure.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +24,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="feoeyd3m" />
