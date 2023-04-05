@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18a6a10c-9c90-4e71-8439-941228aae2f7" name="Changes" comment="Completed lab 3, lab 4, and assignment 2">
-      <change afterPath="$PROJECT_DIR$/src/lab9/Abo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign4/FileStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign4/FileStructure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign4/NLNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign4/NLNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,11 +40,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;/home/michael/roguetrails&quot;
-  }
-}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/lab8" />
@@ -83,8 +78,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FactorialDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab9.FactorialDemo" />
+    <configuration name="FibonacciDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab9.FibonacciDemo" />
       <module name="cs1027-archive" />
       <extension name="coverage">
         <pattern>
@@ -96,12 +91,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FibonacciDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab9.FibonacciDemo" />
+    <configuration name="FileSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="assign4.FileSystem" />
       <module name="cs1027-archive" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lab9.*" />
+          <option name="PATTERN" value="assign4.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,16 +121,16 @@
       <item itemvalue="Application.TestFileStructure" />
       <item itemvalue="Application.Abo" />
       <item itemvalue="Application.ExecutionStackExample" />
-      <item itemvalue="Application.FactorialDemo" />
       <item itemvalue="Application.FibonacciDemo" />
+      <item itemvalue="Application.FileSystem" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TestFileStructure" />
+        <item itemvalue="Application.FileSystem" />
         <item itemvalue="Application.ExecutionStackExample" />
         <item itemvalue="Application.Abo" />
         <item itemvalue="Application.FibonacciDemo" />
-        <item itemvalue="Application.FactorialDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -182,6 +177,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Completed assign 1" />

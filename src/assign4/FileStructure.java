@@ -3,6 +3,12 @@ package assign4;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * Creates an n-ary tree of files and directories
+ *
+ * @author Michael Quick
+ * @version 1.0, 2023/04/04
+ */
 public class FileStructure {
     private NLNode<FileObject> root;
 
@@ -17,23 +23,24 @@ public class FileStructure {
 
     private void createFolderStructure(NLNode<FileObject> r) {
         // Best case: r is a file, so there is nothing else to traverse
-        if (!r.getData().isFile()) {
-            // Recursive case: r was a directory
-            Iterator<FileObject> iterator = r.getData().directoryFiles();
+        if (r.getData().isFile())
+            return;
 
-            // Loop through all the files in the directory
-            while (iterator.hasNext()) {
-                FileObject fileObject = iterator.next();
-                NLNode<FileObject> newNode = new NLNode<>();
-                newNode.setData(fileObject);
+        // Recursive case: r was a directory
+        Iterator<FileObject> iterator = r.getData().directoryFiles();
 
-                // Connect the new node to its parent
-                newNode.setParent(root);
-                root.addChild(newNode);
+        // Loop through all the files in the directory
+        while (iterator.hasNext()) {
+            FileObject fileObject = iterator.next();
+            NLNode<FileObject> newNode = new NLNode<>();
+            newNode.setData(fileObject);
 
-                // Recursively continue down the file structure until a file is found instead of a directory
-                createFolderStructure(newNode);
-            }
+            // Connect the new node to its parent
+            newNode.setParent(r);
+            r.addChild(newNode);
+
+            // Recursively continue down the file structure until a file is found instead of a directory
+            createFolderStructure(newNode);
         }
     }
 
@@ -76,21 +83,33 @@ public class FileStructure {
     private String inorder(NLNode<FileObject> node, String file) {
         // If the node is a file of the specified type, add it to the arraylist
         if (node.getData().isFile() && node.getData().getName().equals(file)) {
-            System.out.println(node.getData().getLongName());
             return node.getData().getLongName();
         } else if (node.getData().isDirectory()) {
             // Recursively search through the rest of the children in the tree
             Iterator<NLNode<FileObject>> iterator = node.getChildren();
             while (iterator.hasNext()) {
                 NLNode<FileObject> child = iterator.next();
-                inorder(child, file);
+                String result = inorder(child, file);
+
+                // Check if the result of the child are not blank (file found)
+                if (!result.equals(""))
+                    return result;
             }
         }
+
+        // All files in the tree have been checked, but were not the specified file
         return "";
     }
 
 
+    /**
+     * Find a specified file in the file structure
+     *
+     * @param name the name of the file that is being looked for
+     * @return the absolute path of the file
+     */
     public String findFile(String name) {
+        // Use inorder algorithm to find the file
         return inorder(root, name);
     }
 
